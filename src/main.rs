@@ -1,5 +1,7 @@
 use std::io::stdin;
 
+const END_GAME: &str = "END";
+
 fn main() {
     println!("Palindrome.");
     println!("If you want to exit. please type ==> :q\n");
@@ -9,7 +11,7 @@ fn main() {
         stdin().read_line(&mut pre_string).expect("Please put correct string.");
         
         let string: &str = &pre_string.trim().replace(" ", "");
-        if string == ":q" {
+        if string.to_uppercase() == END_GAME {
             println!("==========");
             println!("THANK YOU.");
             println!("==========");
